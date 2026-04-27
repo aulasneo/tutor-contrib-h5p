@@ -1,0 +1,21 @@
+# Start of tutor-contrib-h5p patch
+{% if H5P_BUCKET != "" or H5P_ENDPOINT != "" %}handle /h5pxblockmedia/* {
+{% set h5p_endpoint = H5P_ENDPOINT | default('', true) %}
+{% set s3_host = S3_HOST | default('', true) %}
+{% set s3_port = S3_PORT | default('', true) %}
+{% set s3_region = S3_REGION | default('', true) %}
+{% if H5P_URL_STYLE == "path" %}
+    rewrite * /{{ H5P_BUCKET }}{{ H5P_PATH }}{uri}
+{% else %}
+    rewrite * {{ H5P_PATH }}{uri}
+{% endif %}
+    reverse_proxy {
+{% if H5P_URL_STYLE == "path" %}
+        to {{ "https" if ENABLE_HTTPS else "http" }}://{% if h5p_endpoint %}{{ h5p_endpoint }}{% elif s3_host %}{{ s3_host }}{% if s3_port %}:{{ s3_port }}{% endif %}{% elif s3_region %}s3.{{ s3_region }}.amazonaws.com{% endif %}
+{% else %}
+        to {{ "https" if ENABLE_HTTPS else "http" }}://{{ H5P_BUCKET }}.{% if h5p_endpoint %}{{ h5p_endpoint }}{% elif s3_host %}{{ s3_host }}{% if s3_port %}:{{ s3_port }}{% endif %}{% elif s3_region %}s3.{{ s3_region }}.amazonaws.com{% endif %}
+{% endif %}
+        header_up Host {upstream_hostport}
+    }
+}{% else %}// Skipping H5P proxy to S3 as both H5P_BUCKET and H5P_ENDPOINT are empty.{% endif %}
+# End of tutor-contrib-h5p patch

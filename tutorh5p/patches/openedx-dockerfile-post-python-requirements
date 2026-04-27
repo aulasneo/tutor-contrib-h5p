@@ -1,0 +1,4 @@
+# Start of tutor-contrib-h5p patch
+RUN --mount=type=cache,target=/openedx/.cache/pip,sharing=shared \
+   $PIP_COMMAND install '{{ H5P_BACKEND_REPO }}'
+# End of tutor-contrib-h5p patch

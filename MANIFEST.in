@@ -1,0 +1,2 @@
+recursive-include tutorh5p/patches *
+recursive-include tutorh5p/templates *

@@ -1,0 +1,56 @@
+[project]
+name = "tutor-contrib-h5p"
+description = "h5p plugin for Tutor"
+authors = [
+  { name = "Andres Gonzalez" },
+]
+license = { text = "AGPLv3" }
+license-files = []
+readme = { file = "README.rst", content-type = "text/x-rst" }
+requires-python = ">=3.11"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "tutor>=21.0.0,<22.0.0",
+]
+dynamic = ["version"]
+
+[dependency-groups]
+dev = [
+  "build",
+  "black",
+  "isort",
+  "mypy",
+  "pip-tools",
+  "pylint",
+  "twine",
+]
+
+[project.urls]
+Code = "https://github.com/aulasneo/tutor-contrib-h5p"
+Issues = "https://github.com/aulasneo/tutor-contrib-h5p/issues"
+
+[project.entry-points."tutor.plugin.v1"]
+h5p = "tutorh5p.plugin"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "tutorh5p/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tutorh5p"]
+
+[tool.hatch.build.targets.sdist]
+strict-naming = false
+include = ["/tutorh5p", "/README.rst", "/CHANGELOG.md"]
+exclude = ["tests*"]

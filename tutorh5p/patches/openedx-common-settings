@@ -1,0 +1,10 @@
+# Start of tutor-contrib-h5p patch
+{% if H5P_BUCKET != "" or H5P_ENDPOINT != "" %}
+H5PXBLOCK_STORAGE = {
+    "storage_class": "storages.backends.s3boto3.S3Boto3Storage",
+    "settings": {
+        "custom_domain": "{{ LMS_HOST }}",
+    },
+}
+{% else %}// Skipping H5P proxy to S3 as both H5P_BUCKET and H5P_ENDPOINT are empty.{% endif %}
+# End of tutor-contrib-h5p patch
