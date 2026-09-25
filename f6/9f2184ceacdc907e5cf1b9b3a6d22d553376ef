@@ -1,0 +1,31 @@
+README.rst
+  s_a603f5dbd09fc3::t_16a33f3c984637 107-109
+  s_a603f5dbd09fc3::t_900398f825f865 43,134
+pyproject.toml
+  s_a603f5dbd09fc3::t_900398f825f865 10
+  s_a603f5dbd09fc3::t_4baff6b50a6a27 17,20-21,24
+tutorh5p/plugin.py
+  s_a603f5dbd09fc3::t_16a33f3c984637 28
+tutorh5p/patches/openedx-dockerfile-post-python-requirements
+  s_a603f5dbd09fc3::t_16a33f3c984637 3
+CHANGELOG.md
+  s_a603f5dbd09fc3::t_16a33f3c984637 7
+  s_a603f5dbd09fc3::t_18388ac41ac981 5-6
+  s_a603f5dbd09fc3::t_d05d3f60e9e02e 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "f69f2184ceacdc907e5cf1b9b3a6d22d553376ef",
+  "prompts": {},
+  "sessions": {
+    "s_a603f5dbd09fc3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06dbe-c5c9-73e0-ba46-9efa6c338caf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Andrés González <andres@aulasneo.com>"
+    }
+  }
+}
