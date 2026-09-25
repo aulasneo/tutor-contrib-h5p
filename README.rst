@@ -40,7 +40,7 @@ When S3 storage is configured, the plugin applies two changes:
 Requirements
 ************
 
-- `Tutor <https://docs.tutor.edly.io>`__ >= 21.0 (Sumac)
+- `Tutor <https://docs.tutor.edly.io>`__ >= 22.0 (Verawood)
 - For S3 storage: `tutor-contrib-s3 <https://github.com/cleura/tutor-contrib-s3>`__
   must be installed and properly configured before enabling this plugin.
 
@@ -104,6 +104,9 @@ All settings can be changed with ``tutor config save --set H5P_<KEY>=<value>``.
    * - ``H5P_PATH``
      - *(empty)*
      - Optional key prefix inside the bucket where H5P files are stored.
+   * - ``H5P_BACKEND_VERSION``
+     - ``0.2.18``
+     - Version of ``h5p-xblock`` installed in the Open edX image.
 
 
 S3 URL style examples

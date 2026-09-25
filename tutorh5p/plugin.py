@@ -25,6 +25,7 @@ config = {
         "PATH": "",
         "VERSION": __version__,
         "BACKEND_REPO": "h5p-xblock",
+        "BACKEND_VERSION": "0.2.18",
     }
 }
 

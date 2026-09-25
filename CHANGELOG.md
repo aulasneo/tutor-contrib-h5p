@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+- Upgrade to Verawood
+- Pin `h5p-xblock` to version 0.2.18 by default.
+
 ## Version 21.0.0 (2026-04-27)
 
 ### Added
